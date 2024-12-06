@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo1.css">
+    <link rel="icon" href="imgs/bytewave1ondinhas.png">
+
+
+    <title>Calculadora Web</title>
+  </head>
+  <body class="fundo">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+                <img src="imgs/bytewaveorig.png" alt="" class="img-fluid">
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html"> <i class="fas fa-universal-access"></i> Maioridade <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index1.html"> <i class="fas fa-calculator"></i> Calculadora <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index2.html"> <i class="fas fa-check-circle"></i> Você foi aprovado? <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+        <div class="container-fluid">
+            
+        
+              <div class="row espacoA espacoB   ">
+                <div class="col-12 text-center">
+                    <h2 class="letra">Calculadora Web <i class="fas fa-laptop-code"></i></h2>
+                </div>
+              </div>
+
+              <hr>
+
+              <div class="row text-center">
+                <div class="col-12">
+                      <div class="offset-3 col-5 espacoE espacoF">
+                          <form>
+                              <div class="form-group text-center">
+                                <label>Entre com o primeiro valor:
+                                </label>
+                                <input type="text" class="form-control idade" id="valor1" name="valor1" placeholder="Adicione o valor 1">
+                              </div>
+                              <div class="form-group">
+                                <label>Entre com o segundo valor:
+                                </label>
+                                <input type="text" class="form-control idade" id="valor2" name="valor2" placeholder="Adicione o valor 2">
+                              </div>
+                              <div class="form-group">
+                                <label> Escolha a forma de operação</label>
+                                <select class="form-control" id="operacao" name="operacao">
+                                    <option value="soma">Soma</option>
+                                    <option value="subtracao">Subtração</option>
+                                    <option value="multiplicacao">Multiplicação</option>
+                                    <option value="divisao">Divisão</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-info btn-calcular espaco5">Calcular</button>
+                          </form>  
+                          <div class="mensagem d-none" role="alert"></div>  
+                      </div>
+                </div>
+             </div>
+
+            <!-- rodapé INICIO -->
+            <div class="row fundorodape">
+              <div class="col-5 paddingrodape1 d-none d-sm-block d-md-block">
+                <img src="imgs/bytewavebranco.png" class="img-fluid" alt="">
+              </div>
+            
+              <div class="col-4  paddingrodape">
+                <p><a href="index.html" class="rodapelinks rodapelinks1 text-center">Maioridade Web</a></p>
+                <p><a href="index1.html" class="rodapelinks rodapelinks1 text-center">Calculadora</a></p>
+                <p><a href="index2.html" class="rodapelinks rodapelinks1 text-center">Você foi aprovado?</a></p>
+              </div>
+              <div class="col-2 paddingrodape1 ">
+                <h5 class="paddingrodape">Desenvolvido por Angelina Astolfi</h5>
+              </div>
+            </div>
+  <!-- fim Rodapé -->
+        </div>    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <script>
+        $(document).ready(function() {
+                
+                // variaveis
+                
+                $(".btn-calcular").click(function() {
+
+                    // pegando os dados do formulario e salvando em variaveis
+                    var operacao                    = $("#operacao").val();
+                    var valor1                      = $("#valor1").val();
+                    var valor2                      = $("#valor2").val();
+                    
+                    if(operacao == "soma" && valor1 != "" && valor2 != ""){
+                        $(".mensagem").removeClass("d-none");
+                        $(".mensagem").html( valor1 + "+" + valor2 + " é = " + (parseInt(valor1) + parseInt(valor2)) + ".");
+                        $(".mensagem").addClass("alert-primary");
+                        $(".mensagem").removeClass("alert-danger");
+                    }
+
+                    else if(operacao == "subtracao" && valor1 != "" && valor2 != ""){
+                        $(".mensagem").removeClass("d-none");
+                        $(".mensagem").html( valor1 + " - " + valor2 + " é = " + (parseInt(valor1) - parseInt(valor2)) + ".");
+                        $(".mensagem").addClass("alert-primary");
+                        $(".mensagem").removeClass("alert-danger");
+                    }
+
+                    else if(operacao == "multiplicacao" && valor1 != "" && valor2 != ""){
+                        $(".mensagem").removeClass("d-none");
+                        $(".mensagem").html( valor1 + " x " + valor2 + " é = " + (parseInt(valor1) * parseInt(valor2)) + ".");
+                        $(".mensagem").addClass("alert-primary");
+                        $(".mensagem").removeClass("alert-danger");
+                    }
+
+                    else if(operacao == "divisao" && valor1 != "" && valor2 != ""){
+                        $(".mensagem").removeClass("d-none");
+                        $(".mensagem").html( valor1 + " / " + valor2 + " é = " + (parseInt(valor1) / parseInt(valor2)) + ".");
+                        $(".mensagem").addClass("alert-primary");
+                        $(".mensagem").removeClass("alert-danger");
+                    }
+
+                    else if(valor1 == "" && valor2 != ""){
+                        $(".mensagem").removeClass("d-none");
+                        $(".mensagem").html("O campo 1 está em branco.");
+                        $(".mensagem").addClass("alert-danger");
+                        $(".mensagem").removeClass("alert-sucess");
+                    }
+
+                    else if(valor2 == "" && valor1 != ""){
+                        $(".mensagem").removeClass("d-none");
+                        $(".mensagem").html("O campo 2 está em branco.");
+                        $(".mensagem").addClass("alert-danger");
+                        $(".mensagem").removeClass("alert-sucess");
+                    }
+
+                    else if(valor2 == "" && valor1 == ""){
+                        $(".mensagem").removeClass("d-none");
+                        $(".mensagem").html("Os dois campos estão em branco.");
+                        $(".mensagem").addClass("alert-danger");
+                        $(".mensagem").removeClass("alert-sucess");
+                    }
+                });
+
+
+                // exibe mensagem na tela
+                //alert("Hello World!");
+                
+                // exibe mensagem atraves do console
+                //console.log("Hello World Console!");
+                
+            });
+    </script>
+  </body>
+</html>
